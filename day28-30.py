@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-TOKEN = "8927093512:AAHNIw2BJNVLThob-Ht0TAgVdpEOiuK3QbI"
+TOKEN = "9876543234:xyfygihohifktsdughjufdtydugi"
 current_index = 0
 
 def get_day_notes(day):
@@ -139,7 +139,21 @@ async def journey_both(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def abyss(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Digital abyss scan initializing..."
+"""  🌐 DIGITAL ABYSS
+
+  Available Scans:
+
+  📰 /hackernews
+  Tech surveillance signals.
+
+  📡 /techsignals
+  Python, AI, GitHub, tech movement.
+
+  🌀 /chaosfeed
+  Weird internet artifacts detected.
+
+  🎲 /randomdiscovery
+  Unknown signal from the abyss."""
     )
 
 async def chaos(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -147,9 +161,9 @@ async def chaos(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Shall we summon the Internet Chaos Or Scan the Digital Abyss?"
     )
 
-async def check_me(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def hackernews(update: Update, context: ContextTypes.DEFAULT_TYPE):
     articles = get_news()
-    message=""
+    message = "[ABYSS SCAN COMPLETE]\n\n"
     for article in articles:
         message +=(
         f"• {article['title']}\n"
@@ -166,7 +180,7 @@ app.add_handler(CommandHandler("journey_notes", journey_notes))
 app.add_handler(CommandHandler("hi", hi))
 app.add_handler(CommandHandler("news", news))
 app.add_handler(CommandHandler("chaos", chaos))
-app.add_handler(CommandHandler("check_me", check_me))
+app.add_handler(CommandHandler("hackernews", hackernews))
 app.add_handler(CommandHandler("journey_code", journey_code))
 app.add_handler(CommandHandler("journey_both", journey_both))
 app.add_handler(CommandHandler("journey", journey))
