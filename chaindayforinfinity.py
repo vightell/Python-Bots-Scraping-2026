@@ -1,0 +1,1 @@
+print("I Showed Up, Busy Day, Life Has No Mercy.")
