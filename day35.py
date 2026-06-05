@@ -1,6 +1,7 @@
 import requests
 import random
 import os
+import asyncio
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from telegram import Update
@@ -472,4 +473,6 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, journey_router))
 app.add_handler(CommandHandler("abyss", abyss))
 app.add_handler(CommandHandler("randomdiscovery", randomdiscovery))
 print("Chaos Scraper is sprinting...")
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 app.run_polling()
