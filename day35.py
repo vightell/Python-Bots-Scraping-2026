@@ -1,10 +1,16 @@
 import requests
 import random
 import os
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+if not TOKEN:
+    raise Exception("TOKEN variable is not found")
 current_index = 0
 tech_index = 0
 
